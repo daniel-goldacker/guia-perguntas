@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Perguntas & Respostas</title>
+  </head>
+  <body>
+    <h1>Perguntas & Respostas</h1>
+    <hr />
+    <h3>Lista de Respostas</h3>
+    <p>Nome: <%= nome %></p>
+    <p>Linguagem: <%= linguagem %></p>
+    <p>Empresa: <%= empresa %></p>
+    <p>Inscritos: <%= inscritos %></p>
+
+    <% if(exibirMsg){ %>
+    <h3>Isso é uma mensagem de erro!</h3>
+    <% } else { %>
+      <h3>Isso é uma mensagem!</h3>
+    <% } %>
+  </body>
+</html>
