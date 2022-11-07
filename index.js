@@ -8,13 +8,20 @@ app.get("/:nome/:linguagem", (request, response) => {
   var nome = "Daniel Goldacker";
   var linguagem = "Javascript";
   var exibirMsg = false;
+  var produtos = [
+    {nome: "Doritos", preco: 3.14},
+    {nome: "Coca", preco:5},
+    {nome: "leite", preco:1.45} 
+  ]
+
 
   response.render("index", {
     nome: request.params.nome,
     linguagem: request.params.linguagem,
     empresa: "Software SA",
     inscritos: 250,
-    exibirMsg: exibirMsg
+    exibirMsg: exibirMsg,
+    produtos: produtos
   });
 });
 

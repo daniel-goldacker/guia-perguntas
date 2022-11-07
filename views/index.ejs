@@ -18,5 +18,10 @@
     <% } else { %>
       <h3>Isso é uma mensagem!</h3>
     <% } %>
+
+    <h3>Lista de Produtos</h3>
+    <% produtos.forEach(function(produto) { %>
+      <p>Produto: <%= produto.nome %> -> Preço: <%= produto.preco %> </p>
+    <% }) %>
   </body>
 </html>
