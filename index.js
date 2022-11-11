@@ -3,26 +3,14 @@ const app = express();
 
 // Digo para o express que quero usar o ejs como view engine
 app.set("view engine", "ejs");
+app.use(express.static('public'));
 
-app.get("/:nome/:linguagem", (request, response) => {
-  var nome = "Daniel Goldacker";
-  var linguagem = "Javascript";
-  var exibirMsg = false;
-  var produtos = [
-    {nome: "Doritos", preco: 3.14},
-    {nome: "Coca", preco:5},
-    {nome: "leite", preco:1.45} 
-  ]
+app.get("/", (request, response) => {
+  response.render("index");
+});
 
-
-  response.render("index", {
-    nome: request.params.nome,
-    linguagem: request.params.linguagem,
-    empresa: "Software SA",
-    inscritos: 250,
-    exibirMsg: exibirMsg,
-    produtos: produtos
-  });
+app.get("/perguntar", (request, response) => {
+  response.render("perguntar");
 });
 
 app.listen(8080, () => {
